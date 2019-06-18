@@ -29,6 +29,9 @@ CREATE TABLE reservations (
   date_created DATE DEFAULT CURRENT_DATE
 );
 
+-- ALTER TABLE reservations
+--     ADD CONSTRAINT fk_reservations FOREIGN KEY (restaurant_id) REFERENCES restaurants (id);
+
 COPY restaurants(id, name, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") FROM '/Users/williamchan/Desktop/sdc/reservations-service/restaurantData.csv' DELIMITER ',' CSV HEADER;
 
 COPY reservations(reservation_id, restaurant_id, reservation_date, reservation_time, guests) FROM '/Users/williamchan/Desktop/sdc/reservations-service/db/reservationData.csv' DELIMITERS ',' CSV HEADER;

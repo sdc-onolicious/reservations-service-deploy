@@ -9,8 +9,7 @@ const pool = new Pool({
 });
 
 const getReservations = (restaurant_id, callback) => {
-  // pool.query(`SELECT restaurants.id, name, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM", reservation_id, restaurant_id, reservation_date, reservation_time, guests FROM reservations INNER JOIN restaurants ON restaurants.id = reservations.restaurant_id WHERE reservations.restaurant_id = ${restaurant_id};`, callback);
-  pool.query(`SELECT * FROM restaurants WHERE id = ${restaurant_id};`, callback);
+  pool.query(`SELECT restaurants.id, name, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM", reservation_id, restaurant_id, reservation_date, reservation_time, guests FROM reservations INNER JOIN restaurants ON restaurants.id = reservations.restaurant_id WHERE reservations.restaurant_id = ${restaurant_id};`, callback);
 };
 
 const addReservation = (reservationInfo, callback) => {
